@@ -46,8 +46,6 @@ The age (in months) of the log files to be archived. Any log file older than thi
 .\clogs.ps1 -Path "C:\Logs" -Age 6
 ```
 
-````
-
 This command will:
 
 1. Look for `.log` files in the `C:\Logs` directory and its subdirectories.
@@ -99,4 +97,3 @@ This will archive the logs into the `C:\Logs\Backup` directory.
 ## Contribution
 
 Feel free to fork and improve the script! Pull requests are welcome.
-````
