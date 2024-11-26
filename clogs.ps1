@@ -49,6 +49,8 @@ param(
     [int]$Age
 )
 
+Write-Host
+
 # Administratorrechte prüfen
 $user = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
 if (-Not ($user.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))) {
@@ -62,8 +64,6 @@ if (-not $ArchivePath) {
     $ArchivePath = Join-Path -Path $Path -ChildPath "Archive"
 }
 
-Write-Host
-
 # Prüfen, ob der Path-Ordner existiert
 if (-Not (Test-Path $Path -PathType Container)) {
     Write-Warning "'$Path' doesn't exist."
@@ -71,15 +71,16 @@ if (-Not (Test-Path $Path -PathType Container)) {
     exit
 }
 
-# Archive-Ordner erstellen, falls er nicht existiert
-if (-Not (Test-Path $ArchivePath)) {
-    New-Item -Path $ArchivePath -ItemType Directory | Out-Null
-}
-
 # Validierung des Alters
 if ($Age -lt 0) {
     Write-Warning "The age must be a positive integer."
+    Write-Host
     exit
+}
+
+# Archive-Ordner erstellen, falls er nicht existiert
+if (-Not (Test-Path $ArchivePath)) {
+    New-Item -Path $ArchivePath -ItemType Directory | Out-Null
 }
 
 # Logdateien suchen
