@@ -11,9 +11,9 @@
 
 $drive_letter = "C"  # Das Laufwerk, das überwacht werden soll
 $threshold = 10      # Schwellenwert für den freien Speicher in Prozent
-$path = "C:\Users\lcierzynski\Desktop\dev\vscode\powershell\clogs\Logs"  # Pfad zu den Logs, die überprüft werden sollen
-$age = 0             # Maximales Alter der Logs in Monaten (ältere Logs werden automatisch gelöscht)
-$archive_path = "C:\Users\lcierzynski\Desktop\dev\vscode\powershell\clogs\Logs"  # Zielpfad, wohin die Logs archiviert werden sollen
+$path = "C:\Pfad\Zu\Logs"  # Pfad zu den Logs, die überprüft werden sollen
+$age = 3             # Maximales Alter der Logs in Monaten (ältere Logs werden automatisch gelöscht)
+$archive_path = "D:\Pfad\Zu\Archiv"  # Zielpfad, wohin die Logs archiviert werden sollen
 
 Write-Host
 
