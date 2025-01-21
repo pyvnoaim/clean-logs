@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2025-01-21
+
+### Added
+
+- **Direct Deletion Without Archiving**: Introduced functionality to delete log files directly without archiving them. This provides users with more flexibility in managing log files.
+
 ## [1.1.0] - 2024-11-25
 
 ### Added
