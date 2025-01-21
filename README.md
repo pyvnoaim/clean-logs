@@ -85,6 +85,7 @@ This will archive the logs into the `C:\Logs\Backup` directory.
 ---
 [~] Archive outdated log file(s)? (y/N)
 [+] 3 log file(s) archived into 'Archived_Logs_2024-11-25.zip' - 45.00 MB
+---
 [~] Delete the archived files from the source directory? (y/N)
 [+] 3 log file(s) deleted - 45.00 MB deleted
 ```
