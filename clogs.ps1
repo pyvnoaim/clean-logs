@@ -126,9 +126,24 @@ if ($old_logs_count -eq 0) {
 $confirm = Read-Host "[~] Archive outdated log file(s)? (y/N)"
 if ($confirm -ne "y") {
     Write-Host -ForegroundColor Red "[!] Archiving canceled by the user."
-    Write-Host
-    exit
-}
+    Write-Host -ForegroundColor Gray "---"
+    # Benutzerabfrage zur Löschung
+        $delete_confirm = Read-Host "[~] Delete the archived files from the source directory? (y/N)"
+        if ($delete_confirm -eq "y") {
+            foreach ($old_log in $old_logs) {
+                Remove-Item $old_log.FullName -Force
+            }
+            if ($deleted_size_mb -gt 1024) {
+                Write-Host -ForegroundColor Green "[+] $old_logs_count log file(s) deleted - $formatted_deleted_size_gb GB deleted"
+            } else {
+                Write-Host -ForegroundColor Green "[+] $old_logs_count log file(s) deleted - $formatted_deleted_size_mb MB deleted"
+            }
+        } else {
+            Write-Host -ForegroundColor Red "[!] Deleting canceled by the user."
+            Write-Host
+            exit
+        }
+    }
 
 # ZIP-Datei erstellen
 $zip_name = "Archived_Logs_{0:yyyy-MM-dd}.zip" -f (Get-Date)
