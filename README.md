@@ -34,7 +34,7 @@ This PowerShell script is designed to help you manage log files by archiving out
 ### Example Command
 
 ```powershell
-.\LogArchiver.ps1 -Path "C:\Logs" -ArchivePath "C:\ArchivedLogs" -Age 6
+.\clogs.ps1 -Path "C:\Logs" -ArchivePath "C:\ArchivedLogs" -Age 6
 ```
 
 This command will archive all `.log` files in `C:\Logs` that are older than 6 months into `C:\ArchivedLogs`.
