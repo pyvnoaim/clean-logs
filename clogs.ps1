@@ -139,6 +139,7 @@ if ($old_logs_count -eq 0) {
 $confirm = Read-Host "[~] Archive outdated log file(s)? (y/N)"
 if ($confirm -ne "y") {
     Write-Status -Message "Archiving canceled by the user." -Color "Red"
+    Write-Host
     exit
 }
 
